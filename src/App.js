@@ -3,6 +3,8 @@ import Navbar from "./layout/Navbar"
 import BottomMenu from "./layout/BottomMenu"
 import Banner from './components/Banner'
 import SectionTitle from "./components/SectionTitle";
+import CategoryCard from "./components/CategoryCard";
+import Burger from "./assets/images/burger.png"
 
 function App() {
   return (
@@ -14,6 +16,13 @@ function App() {
           <Banner link={"#"} discount={20}/>
           <div className="mainContainer__dishContainer">
             <SectionTitle title={"Menu Category"} />
+            <div className="dishContainer__categoryList">
+              <CategoryCard image={Burger} title="Burger" />
+              <CategoryCard image={Burger} title="Burger" />
+              <CategoryCard image={Burger} title="Burger" />
+              <CategoryCard image={Burger} title="Burger" />
+              <CategoryCard image={Burger} title="Burger" />
+            </div>
           </div>
         </div>
         <div className="rightMenu"></div>

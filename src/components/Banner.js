@@ -7,7 +7,7 @@ function Banner({ discount, link }) {
       <div className="banner__intro">
         <h2>Welcome to Deliver</h2>
         <p>
-          Get free discount for every <span>$ {discount}</span>
+          Get free discount for every <span>$ {discount}</span> purchase
         </p>
         <a href={link}>Get started</a>
       </div>

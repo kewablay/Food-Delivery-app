@@ -247,17 +247,21 @@ main{
   border-radius: 7px;
 }
 .banner__intro p{
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
+  width: 60%;
+  color: rgb(155 135 113);
+  font-size: 500;
+  font-size: 17px;
 }
 .banner__ring{  
   position: absolute;
   background: var(--clr-secondary);
-  width: 225px;
+  width: 262px;
   height: 200px;
   border-radius: 50%;
   border: 30px solid rgb(50 188 245 / 83%);
-  bottom: -120;
-  right: -46px;
+  bottom: -120px;
+  right: -55px;
 }
 .banner__ring:last-child{  
   position: absolute;
@@ -277,8 +281,8 @@ main{
 }
 .banner__img img{
     max-width: 100%;
-    width: 165px;
-    height: 171px;
+    width: 187px;
+    height: 168px;
     object-fit: contain;
     transform: translateX(5px);
 }
@@ -289,4 +293,71 @@ main{
   justify-content: space-between;
   align-items: center;
 }
+.sectionTitle__icon{
+  background: var(--clr-secondary);
+  color: var(--clr-primary-light);
+  padding: 0 .5rem;
+  border-radius: 5px;
+  font-size: 20px;
+  margin-left:.2rem;
+}
+
+/* dish container section */
+.mainContainer__dishContainer{
+  margin-top: 10px;
+}
+
+.dishContainer__categoryList{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  margin: 10px 0;
+  padding: 10px 0;
+}
+.dishContainer__categoryList::-webkit-scrollbar{
+  display: none;
+}
+.categoriesList__card{
+  width: 100px;
+  min-width: 100px;
+  height: 100px;
+  min-height: 100px;
+  background: var(--clr-primary-light);
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  padding: 5px;
+  transition: .5s;
+  cursor: pointer;
+  margin-right: 1rem;
+}
+.card__title{
+  font-weight: 500;
+  
+}
+.card__img{
+  width: 50%;
+  height: 50%;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.card__img img{
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.categoriesList__card .MuiSvgIcon-root {
+  background-color: var(--clr-secondary);
+  color: var(--clr-primary-light);
+  border-radius: 5px;
+  font-size: 18px;
+  padding: 0 0.15rem;
+  margin-top: 0.2rem;
+}
+/* dish container section ends */
 /* main section ends */
