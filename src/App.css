@@ -5,6 +5,7 @@
   --clr-bottom-menu: #d5d5d5;
   --clr-bottom-light: #373848;
   --clr-secondary: #f8901c;
+  --clr-secondary-light: #f8901c94;
   --font-small: 14px;
   --font-medium: 20px;
   --font-large: 40px;
@@ -122,7 +123,7 @@ main{
   padding-bottom: 100px;
 }
 .bottomMenu{
-  position: absolute; 
+  position: fixed; 
   bottom: 0;
   width: 100%;
   display: flex;
@@ -133,7 +134,7 @@ main{
   border-radius: 20px 20px 0 0;
 }
 .bottomMenu__menu{
-  width: 100%;
+  /* width: 100%; */
   display: flex; 
   justify-content: space-between;
   align-items: center;
@@ -232,7 +233,7 @@ main{
 .mainContainer__banner{
   width: 100%;
   height: 180px;
-  background: var(--clr-secondary);
+  background: var(--clr-secondary-light);
   border-radius: 1rem;
   position: relative;
   overflow: hidden;
@@ -254,9 +255,19 @@ main{
   width: 225px;
   height: 200px;
   border-radius: 50%;
-  border: 20px solid rgba(31, 45, 238, 0.726);
+  border: 30px solid rgb(50 188 245 / 83%);
   bottom: -120;
   right: -46px;
+}
+.banner__ring:last-child{  
+  position: absolute;
+  background: var(--clr-secondary);
+  width: 225px;
+  height: 200px;
+  border-radius: 50%;
+  border: 30px solid rgb(110 227 115 / 74%);
+  top: -120px;
+  right: -122px;
 }
 .banner__img{
   position: absolute;
@@ -272,4 +283,10 @@ main{
     transform: translateX(5px);
 }
 /* banner section ends */
+
+.sectionTitle{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 /* main section ends */

@@ -15,6 +15,7 @@ function Banner({ discount, link }) {
         <img src={Delivery} alt="deliver" />
       </div>
       <div className="banner__ring"></div>
+      <div className="banner__ring"></div>
     </div>
   );
 }
