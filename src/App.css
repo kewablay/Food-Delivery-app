@@ -1,38 +1,275 @@
+/* variables */
+:root{
+  --clr-primary: #faf9fb;
+  --clr-primary-light: white;
+  --clr-bottom-menu: #d5d5d5;
+  --clr-bottom-light: #373848;
+  --clr-secondary: #f8901c;
+  --font-small: 14px;
+  --font-medium: 20px;
+  --font-large: 40px;
+}
 .App {
-  text-align: center;
+  width: 100vw;
+  height: 100vh;
+  background: var(--clr-primary);
+  overflow-x: hidden; 
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App::-webkit-scrollbar{
+  display: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+/* navbar section starts*/
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.navbar{
+  padding: 1rem;
+  width: 100%;
+  height: 4em;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
+  background: var(--clr-primary-light);
+  box-shadow: 0px 3px 20px rgba(0,0,0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+.navbar__search{
+  width: 8rem;
+  height: 2rem;
+  border-radius: 20px;
+  box-shadow: 0px 3px 20px rgba(0,0,0, 0.15);
+  /* background: var(--clr-primary-light); */
+  display: flex;
+  align-items: center;
+}
+.navbar__search input{
+  width: 100%;
+  height: 100%;
+  font-size: var(--font-small);
+  font-weight: 300;
+  outline: none;
+  border: none;
+  padding: .3rem;
+  background: transparent;
+}
+.navbar__search .search{
+  padding-left: .3rem;
+}
+.navbar__cart{
+  display: flex;
+  position: relative;
+}
+.navbar__cart .cart{
+  font-size: 30px;
+
+}
+.navbar__cart .cart__number{
+  font-weight: 500;
+  font-size: var(--font-small);
+  position: absolute;
+  top: -5px;
+  right: -2px;
+  background: var(--clr-secondary);
+  border-radius: 50%;
+  min-width: 20px;
+  min-height: 10px;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  z-index: 102;
+  color: var(--clr-primary-light)
+}
+.navbar__profile{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.profile__bg{
+  background: var(--clr-secondary);
+  border-radius: 50%;
   color: white;
+  min-width: 2.8rem;
+  min-height: 2.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.profile__name{
+  font-weight: 400;
+  margin-left: .5rem;
+  display: none;
+}
+.navbar__toggle .toggle__menu{
+  transform: rotate(90deg) !important;
 }
 
-.App-link {
-  color: #61dafb;
+/* navbar section ends  */
+
+/* main section starts */
+main{
+  width: 100%;
+  height: 100vh;
+  background: var(--clr-primary);
+  margin-top: 4rem;
+  /* background: grey; */
+}
+.mainContainer{
+  width: 100%;
+  height: auto;
+  padding: 10px !important;
+  padding-bottom: 100px;
+}
+.bottomMenu{
+  position: absolute; 
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  background-color: var(--clr-bottom-menu);
+  height: 60px;
+  border-radius: 20px 20px 0 0;
+}
+.bottomMenu__menu{
+  width: 100%;
+  display: flex; 
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+}
+.bottomMenu__menu li{
+  position: relative;
+  width: 60px;
+  height: 60px;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+}
+.bottomMenu__menu li a{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+  font-size: 400;
+  flex-direction: column;
+}
+.bottomMenu__icon{
+  display: block;
+  text-align: center;
+  transition: .5s;
+  /* line-height: 70px; */
+  position: relative;
+}
+.bottomMenu__icon .MuiSvgIcon-root{
+  font-size: 26px;
+  color: var(--clr-bottom-light);
+}
+.bottomMenu__menu li.active .bottomMenu__icon{
+  transform: translateY(-27px)
+}
+.bottomMenu__menu li.active .MuiSvgIcon-root{
+  color: white;
+  transition: .5s ease;
+}
+.bottomMenu__indicator{
+  position: absolute;
+  top: -50%; 
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  background: var(--clr-secondary);
+  border: 5px solid white;
+  transition: .5s ease;
+}
+.bottomMenu__indicator::before{
+  content: "";
+  position: absolute;
+  background: red;
+  top: 50%;
+  left:-20px;
+  width: 18px;
+  height: 18px;
+  border-top-right-radius: 18px;
+  background: transparent;
+  box-shadow: 0px -10px 0 0 var(--clr-primary); 
+}
+.bottomMenu__indicator::after{
+  content: "";
+  position: absolute;
+  background: red;
+  top: 50%;
+  right:-20px;
+  width: 18px;
+  height: 18px;
+  border-top-left-radius: 18px;
+  background: transparent;
+  box-shadow: 0px -10px 0 0 var(--clr-primary); 
+}
+.bottomMenu__menu li:nth-child(1).active ~ .bottomMenu__indicator{
+  transform: translateX(calc(30% * 0))
+}
+.bottomMenu__menu li:nth-child(2).active ~ .bottomMenu__indicator{
+  transform: translateX(calc(100% * 1))
+}
+.bottomMenu__menu li:nth-child(3).active ~ .bottomMenu__indicator{
+  transform: translateX(calc(100% * 2))
+}
+.bottomMenu__menu li:nth-child(4).active ~ .bottomMenu__indicator{
+  transform: translateX(calc(100% * 3))
+}
+.bottomMenu__menu li:nth-child(5).active ~ .bottomMenu__indicator{
+  transform: translateX(calc(100% * 4))
+}
+.bottomMenu__menu li:nth-child(6).active ~ .bottomMenu__indicator{
+  transform: translateX(calc(100% * 5))
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* banner section */
+.mainContainer__banner{
+  width: 100%;
+  height: 180px;
+  background: var(--clr-secondary);
+  border-radius: 1rem;
+  position: relative;
+  overflow: hidden;
+  padding: 10px;
 }
+.banner__intro a{
+  color: black;
+  font-weight: 500;
+  padding: .2rem .5rem;
+  background: var(--clr-primary);
+  border-radius: 7px;
+}
+.banner__intro p{
+  margin-bottom: .5rem;
+}
+.banner__ring{  
+  position: absolute;
+  background: var(--clr-secondary);
+  width: 225px;
+  height: 200px;
+  border-radius: 50%;
+  border: 20px solid rgba(31, 45, 238, 0.726);
+  bottom: -120;
+  right: -46px;
+}
+.banner__img{
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1;
+}
+.banner__img img{
+    max-width: 100%;
+    width: 165px;
+    height: 171px;
+    object-fit: contain;
+    transform: translateX(5px);
+}
+/* banner section ends */
+/* main section ends */
