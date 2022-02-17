@@ -1,9 +1,9 @@
 import React from 'react';
 import ArrowDropDownCircleRoundedIcon from "@mui/icons-material/ArrowDropDownCircleRounded";
 
-function CategoryCard({image, title}) {
+function CategoryCard({image, title, isActive}) {
   return (
-    <div className="categoriesList__card">
+    <div className={`categoriesList__card ${isActive && `active`}`}>
       <div className="card__img">
         <img src={image} alt="" />
       </div>
@@ -14,3 +14,4 @@ function CategoryCard({image, title}) {
 }
 
 export default CategoryCard;
+  
